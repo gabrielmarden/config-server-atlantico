@@ -1,6 +1,20 @@
 server:
   port: 9090
 
+spring:
+  datasource:
+    url: ${DATABASE_URL}
+  rabbitmq:
+    addresses: ${CLOUDAMQP_URL}
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+jwt:
+  secret: ${JWT_SECRET}
+  
 eureka:
   client:
     serviceUrl:
